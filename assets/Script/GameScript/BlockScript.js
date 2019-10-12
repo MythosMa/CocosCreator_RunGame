@@ -178,7 +178,7 @@ export default class BlockScript extends cc.Component {
     }
 
     onBeginContact(contact, selfCollider, otherCollider) {
-        console.log("normal block bobobobo index : " + this.index) ;
+        
     }
 
     canBeCollided() {

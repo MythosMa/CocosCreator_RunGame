@@ -89,6 +89,6 @@ export default class EatBlockScript extends cc.Component {
     }
 
     onBeginContact(contact, selfCollider, otherCollider) {
-        console.log("eat block bobobobo") ;
+        
     }
 }
