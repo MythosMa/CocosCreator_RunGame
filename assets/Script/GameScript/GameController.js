@@ -78,7 +78,7 @@ export default class GameController extends cc.Component {
     onLoad(){
         cc.director.getPhysicsManager().enabled = true;
         this.maxUnit = UnitInfo.getUnitCount();
-        this.currentUnitIndex = 0;
+        this.currentUnitIndex = 8;
         this.blocks = [];
         this.blockPool = new cc.NodePool();
         this.eatBlocks = [];
@@ -146,7 +146,7 @@ export default class GameController extends cc.Component {
     }
 
     createEatBlocks(info) {
-        let block = (tihs.eatBlockPool.size > 0 ? this.eatBlockPool.get() : cc.instantiate(this.eatBlockPrefab));
+        let block = (this.eatBlockPool.size > 0 ? this.eatBlockPool.get() : cc.instantiate(this.eatBlockPrefab));
         block.getComponent(EatBlockScript).setBlockInfo(info);
         this.eatBlocks.push(block);
         this.gameLayer.addChild(block, 100);
@@ -184,20 +184,20 @@ export default class GameController extends cc.Component {
     eatBlock(eatBlockInfo) {
         let relativeIndex = eatBlockInfo.relativeIndex;
         let scaleY = eatBlockInfo.scaleY;
-        this.blocks.forEach((item, index) => {
+        for(let index in this.blocks) {
+            let item = this.blocks[index];
             if(item.getComponent(BlockScript).getIndex() === relativeIndex) {
-                item.getComponent(BlockScript).setEatChagneScaleY(scaleY);
-                throw "";
+                item.getComponent(BlockScript).setEatChangeScaleY(scaleY);
             }
-        });
+        }
 
-        this.eatBlocks.forEach((item, index) => {
+        for(let index in this.eatBlocks) {
+            let item = this.eatBlocks[index];
             if(eatBlockInfo.node === item) {
                 eatBlockInfo.node.removeFromParent(true);
-                this.eatBlocks.splice(item, 1);
-                throw "";
+                this.eatBlocks.splice(index, 1);
             }
-        });
+        }
     }
 
     layerChangeCallback() {
