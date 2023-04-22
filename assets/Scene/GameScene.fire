@@ -3,7 +3,7 @@
     "__type__": "cc.SceneAsset",
     "_name": "",
     "_objFlags": 0,
-    "_rawFiles": null,
+    "_native": "",
     "scene": {
       "__id__": 1
     }
@@ -662,6 +662,9 @@
     },
     "blockPrefab": {
       "__uuid__": "a3e476c6-7355-4628-bcde-258876412e53"
+    },
+    "eatBlockPrefab": {
+      "__uuid__": "447ac993-c2b7-47d7-b18a-92d7f94a5e9e"
     },
     "uiLayer": {
       "__id__": 16
