@@ -78,7 +78,7 @@ export default class GameController extends cc.Component {
     onLoad(){
         cc.director.getPhysicsManager().enabled = true;
         this.maxUnit = UnitInfo.getUnitCount();
-        this.currentUnitIndex = 7;
+        this.currentUnitIndex = 0;
         this.blocks = [];
         this.blockPool = new cc.NodePool();
         this.eatBlocks = [];
