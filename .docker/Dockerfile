@@ -5,7 +5,7 @@ FROM --platform=linux/amd64 node:alpine
 WORKDIR /app
 
 # 复制 必须文件
-COPY build/web-desktop ./build
+COPY build/web-mobile ./build
 
 # 安装项目依赖
 RUN npm config set registry http://registry.npm.taobao.org
